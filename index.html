@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stargate Visual Lab — 데이터 시각화 아카이브</title>
+<meta name="description" content="Stargate Corporation 데이터 시각화 아카이브 · 공간계량·부동산·교육 대시보드 모음. Recharts · D3 · Plotly · Chart.js.">
+<meta name="author" content="Dongsoo Jung">
+<meta property="og:title" content="Stargate Visual Lab">
+<meta property="og:description" content="공간계량·부동산·교육 데이터 시각화 아카이브">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%8A%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0a0d14; --panel:#0f172a; --panel2:#111c33;
+  --line:#1f2a44; --line2:#263452;
+  --ink:#e6edf3; --sub:#9aa7b8; --muted:#6b7a90;
+  --acc:#7aa2ff; --acc2:#4f7fff; --good:#63d6a0; --warm:#ffb86b;
+  --grad1:linear-gradient(135deg,#4f7fff 0%,#7aa2ff 55%,#b388ff 100%);
+  --grad2:linear-gradient(135deg,#0b1220 0%,#101a33 100%);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Pretendard","Apple SD Gothic Neo","Segoe UI",system-ui,-apple-system,sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.55; -webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(1000px 600px at 10% -10%, rgba(79,127,255,.18), transparent 60%),
+    radial-gradient(800px 500px at 100% 0%, rgba(179,136,255,.12), transparent 60%),
+    radial-gradient(700px 500px at 50% 120%, rgba(99,214,160,.08), transparent 60%);
+  background-attachment:fixed;
+}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 120px}
+
+.nav{display:flex;justify-content:space-between;align-items:center;padding:8px 4px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand .logo{width:34px;height:34px;border-radius:9px;background:var(--grad1);
+  display:inline-flex;align-items:center;justify-content:center;color:#0b1020;font-weight:900}
+.brand .name{font-size:15px}
+.brand .tag{font-size:11px;color:var(--muted);margin-left:6px}
+.nav .links{display:flex;gap:14px;font-size:13px;color:var(--sub)}
+.nav .links a{color:var(--sub)}
+.nav .links a:hover{color:var(--ink)}
+
+.hero{padding:56px 0 26px}
+.hero h1{margin:0;font-size:40px;line-height:1.12;letter-spacing:-.5px;
+  background:var(--grad1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:var(--sub);font-size:16px;margin:14px 0 18px;max-width:64ch}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+.chip{border:1px solid var(--line2);background:var(--panel);color:var(--sub);
+  padding:6px 10px;border-radius:999px;font-size:12px}
+
+.sec{margin-top:44px}
+.sec h2{font-size:22px;letter-spacing:-.2px;margin:0 0 4px}
+.sec .desc{color:var(--sub);font-size:13px;margin-bottom:18px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.proj{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,var(--panel2),var(--panel));transition:.18s all;display:flex;flex-direction:column}
+.proj:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 14px 40px rgba(79,127,255,.18)}
+.proj .thumb{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.proj .thumb .emo{font-size:44px;filter:drop-shadow(0 6px 18px rgba(79,127,255,.45))}
+.proj .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.proj .ttl{font-weight:700;font-size:15px}
+.proj .sub{color:var(--sub);font-size:12.5px;line-height:1.5}
+.proj .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.proj .tag{font-size:11px;color:var(--muted);border:1px solid var(--line2);padding:3px 8px;border-radius:999px}
+.proj .go{color:var(--acc);font-size:12.5px;font-weight:600}
+.proj .badge{position:absolute;top:10px;left:10px;background:var(--grad1);color:#0b1020;
+  font-size:10.5px;font-weight:800;padding:4px 8px;border-radius:999px;letter-spacing:.3px}
+.proj .badge.live{background:linear-gradient(135deg,#1f8f5f,#63d6a0)}
+.proj.disabled{opacity:.5;cursor:not-allowed}
+.proj.disabled:hover{transform:none;border-color:var(--line);box-shadow:none}
+
+footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);
+  font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media (max-width:820px){ .hero h1{font-size:30px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <div class="brand">
+      <span class="logo">📊</span>
+      <span class="name">STARGATE <span style="color:var(--acc)">VISUAL</span></span>
+      <span class="tag">Lab · 2026</span>
+    </div>
+    <div class="links">
+      <a href="https://www.stargateedu.co.kr/">← 포털</a>
+      <a href="https://github.com/DongsooJung" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>데이터 시각화 아카이브</h1>
+    <p class="lead">
+      Stargate Corporation의 공간계량·부동산·교육 데이터 시각화 모음.
+      Recharts · D3 · Plotly · Chart.js 기반 인터랙티브 대시보드를 한 곳에서 탐색합니다.
+    </p>
+    <div class="chips">
+      <span class="chip">Spatial Econometrics</span>
+      <span class="chip">Hedonic Regression</span>
+      <span class="chip">Recharts · D3 · Plotly</span>
+      <span class="chip">Real Estate</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>시각화 · Visualizations</h2>
+    <div class="desc">클릭하면 라이브 대시보드로 이동합니다.</div>
+    <div class="grid">
+
+      <a class="proj" href="https://www.stargateedu.co.kr/viz-dashboard/">
+        <div class="badge live">LIVE</div>
+        <div class="thumb" style="background:
+          radial-gradient(400px 180px at 20% 20%, rgba(79,127,255,.55), transparent 60%),
+          radial-gradient(300px 180px at 80% 80%, rgba(99,214,160,.4), transparent 60%),
+          linear-gradient(135deg,#0d1426,#121b33)">
+          <span class="emo">🗺️</span>
+        </div>
+        <div class="body">
+          <div class="ttl">지역 분석 대시보드</div>
+          <div class="sub">접근성-가격 헤도닉 회귀(D3), 월별 가격지수·거래량 복합차트(Recharts), 자치구×분기 변동률 히트맵(Plotly). React + Vite.</div>
+          <div class="row"><span class="tag">Recharts · D3 · Plotly</span><span class="go">열기 →</span></div>
+        </div>
+      </a>
+
+      <div class="proj disabled">
+        <div class="thumb" style="background:linear-gradient(135deg,#1a2340,#243560)"><span class="emo">🌏</span></div>
+        <div class="body">
+          <div class="ttl">Choropleth 지도 · (준비중)</div>
+          <div class="sub">서울 자치구 경계 GeoJSON 기반 가격·접근성 지수 단계구분도. 공간 자기상관(Moran's I) 오버레이.</div>
+          <div class="row"><span class="tag">Plotly · GeoJSON</span><span class="go">Coming</span></div>
+        </div>
+      </div>
+
+      <div class="proj disabled">
+        <div class="thumb" style="background:linear-gradient(135deg,#20193a,#322657)"><span class="emo">📐</span></div>
+        <div class="body">
+          <div class="ttl">DID 정책효과 · (준비중)</div>
+          <div class="sub">이중차분(Difference-in-Differences) 처치·통제 그룹 추세와 정책 개입 시점 이벤트 스터디 플롯.</div>
+          <div class="row"><span class="tag">Event Study</span><span class="go">Coming</span></div>
+        </div>
+      </div>
+
+      <div class="proj disabled">
+        <div class="thumb" style="background:linear-gradient(135deg,#20193a,#322657)"><span class="emo">🏠</span></div>
+        <div class="body">
+          <div class="ttl">Airbnb 수익 예측 · (준비중)</div>
+          <div class="sub">서울 에어비앤비 가격·점유율·수익 예측 파이프라인 대시보드. 지역·계절 분해.</div>
+          <div class="row"><span class="tag">Real Estate · ML</span><span class="go">Coming</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Dongsoo Jung · Stargate Corporation</span>
+    <span>
+      <a href="https://www.stargateedu.co.kr/">stargateedu.co.kr</a> ·
+      <a href="https://github.com/DongsooJung/stargate-visual" target="_blank" rel="noopener">repo</a>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
