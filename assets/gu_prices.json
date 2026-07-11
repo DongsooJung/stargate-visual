@@ -1,135 +1,189 @@
 {
  "meta": {
   "source": "서울 열린데이터광장 tbLnOpendataRtmsV (아파트 실거래)",
-  "unit": "만원/평(전용면적 기준)",
   "period": "2025~2026 접수분",
-  "metric": "median"
+  "metric": "median",
+  "layers": {
+   "price": "평단가(만원/평)",
+   "vol": "2026 아파트 거래량(건)",
+   "yoy": "전년 대비 변동률(%)"
+  }
  },
  "districts": {
   "Jongno-gu": {
    "ko": "종로구",
-   "price": 4198,
-   "n": 364
+   "price": 4506,
+   "vol": 365,
+   "yoy": -10.5,
+   "n": 991
   },
   "Jung-gu": {
    "ko": "중구",
-   "price": 5408,
-   "n": 574
+   "price": 5167,
+   "vol": 575,
+   "yoy": 6.7,
+   "n": 1816
   },
   "Yongsan-gu": {
    "ko": "용산구",
-   "price": 7972,
-   "n": 627
+   "price": 7394,
+   "vol": 629,
+   "yoy": 11.6,
+   "n": 2144
   },
   "Seongdong-gu": {
    "ko": "성동구",
-   "price": 7528,
-   "n": 958
+   "price": 6693,
+   "vol": 968,
+   "yoy": 14.9,
+   "n": 4841
   },
   "Gwangjin-gu": {
    "ko": "광진구",
-   "price": 6339,
-   "n": 623
+   "price": 5984,
+   "vol": 621,
+   "yoy": 7.2,
+   "n": 2725
   },
   "Dongdaemun-gu": {
    "ko": "동대문구",
-   "price": 4244,
-   "n": 1809
+   "price": 4213,
+   "vol": 1825,
+   "yoy": 1.0,
+   "n": 5130
   },
   "Jungnang-gu": {
    "ko": "중랑구",
-   "price": 3124,
-   "n": 1640
+   "price": 3087,
+   "vol": 1656,
+   "yoy": 2.7,
+   "n": 3810
   },
   "Seongbuk-gu": {
    "ko": "성북구",
-   "price": 3968,
-   "n": 2026
+   "price": 3866,
+   "vol": 2523,
+   "yoy": 2.0,
+   "n": 6270
   },
   "Gangbuk-gu": {
    "ko": "강북구",
-   "price": 3110,
-   "n": 982
+   "price": 3092,
+   "vol": 986,
+   "yoy": 0.3,
+   "n": 2272
   },
   "Dobong-gu": {
    "ko": "도봉구",
-   "price": 2729,
-   "n": 1686
+   "price": 2684,
+   "vol": 1697,
+   "yoy": 3.8,
+   "n": 3568
   },
   "Nowon-gu": {
    "ko": "노원구",
-   "price": 3482,
-   "n": 2725
+   "price": 3349,
+   "vol": 4549,
+   "yoy": 5.6,
+   "n": 9075
   },
   "Eunpyeong-gu": {
    "ko": "은평구",
-   "price": 3728,
-   "n": 1574
+   "price": 3889,
+   "vol": 2077,
+   "yoy": -4.5,
+   "n": 4499
   },
   "Seodaemun-gu": {
    "ko": "서대문구",
-   "price": 4287,
-   "n": 1611
+   "price": 4495,
+   "vol": 1629,
+   "yoy": -7.4,
+   "n": 5016
   },
   "Mapo-gu": {
    "ko": "마포구",
-   "price": 5995,
-   "n": 1159
+   "price": 6184,
+   "vol": 1174,
+   "yoy": -3.8,
+   "n": 3989
   },
   "Yangcheon-gu": {
    "ko": "양천구",
-   "price": 4440,
-   "n": 1517
+   "price": 4733,
+   "vol": 1542,
+   "yoy": -9.2,
+   "n": 4336
   },
   "Gangseo-gu": {
    "ko": "강서구",
-   "price": 4300,
-   "n": 1686
+   "price": 4260,
+   "vol": 2715,
+   "yoy": -0.3,
+   "n": 5658
   },
   "Guro-gu": {
    "ko": "구로구",
-   "price": 3423,
-   "n": 2021
+   "price": 3370,
+   "vol": 2571,
+   "yoy": -0.1,
+   "n": 6008
   },
   "Geumcheon-gu": {
    "ko": "금천구",
-   "price": 2804,
-   "n": 763
+   "price": 2758,
+   "vol": 769,
+   "yoy": 3.6,
+   "n": 1696
   },
   "Yeongdeungpo-gu": {
    "ko": "영등포구",
-   "price": 5544,
-   "n": 1646
+   "price": 5176,
+   "vol": 1855,
+   "yoy": 9.5,
+   "n": 5207
   },
   "Dongjak-gu": {
    "ko": "동작구",
-   "price": 5901,
-   "n": 1380
+   "price": 5458,
+   "vol": 1395,
+   "yoy": 11.9,
+   "n": 4391
   },
   "Gwanak-gu": {
    "ko": "관악구",
-   "price": 3753,
-   "n": 1486
+   "price": 3696,
+   "vol": 1518,
+   "yoy": 1.7,
+   "n": 3937
   },
   "Seocho-gu": {
    "ko": "서초구",
-   "price": 8379,
-   "n": 1314
+   "price": 8768,
+   "vol": 1326,
+   "yoy": -6.4,
+   "n": 4359
   },
   "Gangnam-gu": {
    "ko": "강남구",
-   "price": 11698,
-   "n": 1709
+   "price": 10769,
+   "vol": 1717,
+   "yoy": 12.2,
+   "n": 4943
   },
   "Songpa-gu": {
    "ko": "송파구",
-   "price": 8586,
-   "n": 1565
+   "price": 7344,
+   "vol": 2425,
+   "yoy": 17.6,
+   "n": 5288
   },
   "Gangdong-gu": {
    "ko": "강동구",
-   "price": 5908,
-   "n": 1720
+   "price": 5709,
+   "vol": 1817,
+   "yoy": 6.2,
+   "n": 5407
   }
  }
 }
