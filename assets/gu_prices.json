@@ -1,0 +1,135 @@
+{
+ "meta": {
+  "source": "서울 열린데이터광장 tbLnOpendataRtmsV (아파트 실거래)",
+  "unit": "만원/평(전용면적 기준)",
+  "period": "2025~2026 접수분",
+  "metric": "median"
+ },
+ "districts": {
+  "Jongno-gu": {
+   "ko": "종로구",
+   "price": 4198,
+   "n": 364
+  },
+  "Jung-gu": {
+   "ko": "중구",
+   "price": 5408,
+   "n": 574
+  },
+  "Yongsan-gu": {
+   "ko": "용산구",
+   "price": 7972,
+   "n": 627
+  },
+  "Seongdong-gu": {
+   "ko": "성동구",
+   "price": 7528,
+   "n": 958
+  },
+  "Gwangjin-gu": {
+   "ko": "광진구",
+   "price": 6339,
+   "n": 623
+  },
+  "Dongdaemun-gu": {
+   "ko": "동대문구",
+   "price": 4244,
+   "n": 1809
+  },
+  "Jungnang-gu": {
+   "ko": "중랑구",
+   "price": 3124,
+   "n": 1640
+  },
+  "Seongbuk-gu": {
+   "ko": "성북구",
+   "price": 3968,
+   "n": 2026
+  },
+  "Gangbuk-gu": {
+   "ko": "강북구",
+   "price": 3110,
+   "n": 982
+  },
+  "Dobong-gu": {
+   "ko": "도봉구",
+   "price": 2729,
+   "n": 1686
+  },
+  "Nowon-gu": {
+   "ko": "노원구",
+   "price": 3482,
+   "n": 2725
+  },
+  "Eunpyeong-gu": {
+   "ko": "은평구",
+   "price": 3728,
+   "n": 1574
+  },
+  "Seodaemun-gu": {
+   "ko": "서대문구",
+   "price": 4287,
+   "n": 1611
+  },
+  "Mapo-gu": {
+   "ko": "마포구",
+   "price": 5995,
+   "n": 1159
+  },
+  "Yangcheon-gu": {
+   "ko": "양천구",
+   "price": 4440,
+   "n": 1517
+  },
+  "Gangseo-gu": {
+   "ko": "강서구",
+   "price": 4300,
+   "n": 1686
+  },
+  "Guro-gu": {
+   "ko": "구로구",
+   "price": 3423,
+   "n": 2021
+  },
+  "Geumcheon-gu": {
+   "ko": "금천구",
+   "price": 2804,
+   "n": 763
+  },
+  "Yeongdeungpo-gu": {
+   "ko": "영등포구",
+   "price": 5544,
+   "n": 1646
+  },
+  "Dongjak-gu": {
+   "ko": "동작구",
+   "price": 5901,
+   "n": 1380
+  },
+  "Gwanak-gu": {
+   "ko": "관악구",
+   "price": 3753,
+   "n": 1486
+  },
+  "Seocho-gu": {
+   "ko": "서초구",
+   "price": 8379,
+   "n": 1314
+  },
+  "Gangnam-gu": {
+   "ko": "강남구",
+   "price": 11698,
+   "n": 1709
+  },
+  "Songpa-gu": {
+   "ko": "송파구",
+   "price": 8586,
+   "n": 1565
+  },
+  "Gangdong-gu": {
+   "ko": "강동구",
+   "price": 5908,
+   "n": 1720
+  }
+ }
+}

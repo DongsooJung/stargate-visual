@@ -38,8 +38,8 @@ h1{font-size:30px;letter-spacing:-.4px;margin:26px 0 6px;background:var(--grad1)
     <a href="https://www.stargateedu.co.kr/">포털</a>
   </div>
   <h1>서울 자치구 평단가 Choropleth</h1>
-  <p class="lead">서울 25개 자치구 평단가(만원/평, 데모 시드값) 단계구분도. 실제 자치구 경계에서 <b>queen 인접행렬</b>을 만들어 공간 자기상관(Moran's I)을 계산하고, Moran 산점도로 공간 군집을 진단합니다.</p>
-  <div class="chips"><span class="chip">Plotly choroplethmapbox</span><span class="chip">Queen Contiguity W</span><span class="chip">Moran's I</span><span class="chip">LISA Quadrants</span></div>
+  <p class="lead">서울 25개 자치구 <b>아파트 실거래 평단가</b>(만원/평, 전용면적 기준·중앙값) 단계구분도. 서울 열린데이터광장 실거래 3.5만여 건 집계. 실제 자치구 경계에서 <b>queen 인접행렬</b>로 공간 자기상관(Moran's I)을 계산합니다.</p>
+  <div class="chips"><span class="chip">서울 열린데이터 실거래</span><span class="chip">Plotly choroplethmapbox</span><span class="chip">Queen Contiguity W</span><span class="chip">Moran's I</span><span class="chip">LISA Quadrants</span></div>
 
   <div class="stats" id="stats"></div>
 
@@ -54,13 +54,8 @@ h1{font-size:30px;letter-spacing:-.4px;margin:26px 0 6px;background:var(--grad1)
 </div>
 
 <script>
-const VAL = {
-  'Gangnam-gu':7200,'Seocho-gu':6600,'Songpa-gu':5200,'Yongsan-gu':5800,'Seongdong-gu':4400,
-  'Gwangjin-gu':4000,'Mapo-gu':4300,'Yangcheon-gu':3900,'Yeongdeungpo-gu':3800,'Gangdong-gu':3900,
-  'Jongno-gu':3900,'Jung-gu':3900,'Dongjak-gu':3700,'Gwanak-gu':3100,'Seodaemun-gu':3400,
-  'Gangseo-gu':3200,'Guro-gu':2900,'Geumcheon-gu':2700,'Dongdaemun-gu':3100,'Jungnang-gu':2700,
-  'Seongbuk-gu':3200,'Nowon-gu':2800,'Eunpyeong-gu':2900,'Gangbuk-gu':2600,'Dobong-gu':2500
-};
+let VAL = {};      // assets/gu_prices.json 실거래 집계로 채움
+let PMETA = null;
 const ACC='#7aa2ff',GOOD='#63d6a0',WARM='#ffb86b',PINK='#f778ba',SUB='#9aa7b8',LINE='#21304f';
 const DARK={paper_bgcolor:'rgba(0,0,0,0)',font:{color:SUB,family:'Pretendard,system-ui,sans-serif'},
   margin:{l:0,r:0,t:0,b:0},mapbox:{style:'carto-darkmatter',center:{lat:37.5651,lon:126.9895},zoom:9.4}};
@@ -76,7 +71,12 @@ function coordSet(geom){
   return s;
 }
 
-fetch('../assets/seoul_gu.json').then(r=>r.json()).then(geo=>{
+Promise.all([
+  fetch('../assets/seoul_gu.json').then(r=>r.json()),
+  fetch('../assets/gu_prices.json').then(r=>r.json())
+]).then(([geo, prices])=>{
+  PMETA = prices.meta;
+  for(const [en,o] of Object.entries(prices.districts)) VAL[en]=o.price;
   const F=geo.features;
   const en=F.map(f=>f.properties.name_eng), ko=F.map(f=>f.properties.name);
   const v=en.map(e=>VAL[e]);
@@ -137,7 +137,7 @@ fetch('../assets/seoul_gu.json').then(r=>r.json()).then(geo=>{
   const sign = I>0.3?'뚜렷한 양(+)의':I>0?'약한 양(+)의':'음(−)의';
   document.getElementById('moranNote').textContent=
     `Moran's I = ${I.toFixed(3)} → ${sign} 공간 자기상관. 유사 가격대가 지리적으로 군집합니다(강남·서초·송파 = HH 고가 클러스터). ` +
-    `queen 인접행렬: 25개 구 · ${totalEdges}개 인접쌍(행표준화). ※ 평단가는 데모 시드값, 인접구조는 실제 경계 기반.`;
+    `queen 인접행렬: 25개 구 · ${totalEdges}개 인접쌍(행표준화). 데이터: ${PMETA.source} · ${PMETA.period} · ${PMETA.metric} 평단가.`;
 }).catch(e=>{ document.getElementById('map').textContent='GeoJSON 로드 실패: '+e; });
 </script>
 </body>
