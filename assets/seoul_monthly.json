@@ -1,59 +1,59 @@
 {
  "meta": {
-  "source": "서울 열린데이터광장 tbLnOpendataRtmsV (아파트 실거래)",
+  "source": "서울 열린데이터광장 tbLnOpendataRtmsV (실거래)",
   "period": "2025~2026 접수분",
   "updated_note": "월간 자동 갱신"
  },
  "series": [
   {
    "month": "2025-02",
-   "volume": 6340,
-   "medianPyeong": 5110
+   "volume": 6335,
+   "medianPyeong": 5097
   },
   {
    "month": "2025-03",
-   "volume": 10462,
-   "medianPyeong": 5148
+   "volume": 10459,
+   "medianPyeong": 5157
   },
   {
    "month": "2025-04",
-   "volume": 5630,
-   "medianPyeong": 4386
+   "volume": 5622,
+   "medianPyeong": 4378
   },
   {
    "month": "2025-05",
-   "volume": 8462,
-   "medianPyeong": 4572
+   "volume": 8473,
+   "medianPyeong": 4574
   },
   {
    "month": "2025-06",
-   "volume": 12406,
+   "volume": 12392,
    "medianPyeong": 4825
   },
   {
    "month": "2025-07",
-   "volume": 4423,
-   "medianPyeong": 4415
+   "volume": 4426,
+   "medianPyeong": 4409
   },
   {
    "month": "2025-08",
-   "volume": 4608,
-   "medianPyeong": 4245
+   "volume": 4607,
+   "medianPyeong": 4246
   },
   {
    "month": "2025-09",
-   "volume": 9016,
-   "medianPyeong": 4830
+   "volume": 9011,
+   "medianPyeong": 4827
   },
   {
    "month": "2025-10",
-   "volume": 9029,
-   "medianPyeong": 4731
+   "volume": 9028,
+   "medianPyeong": 4741
   },
   {
    "month": "2025-11",
    "volume": 3520,
-   "medianPyeong": 4484
+   "medianPyeong": 4483
   },
   {
    "month": "2025-12",
@@ -62,27 +62,27 @@
   },
   {
    "month": "2026-01",
-   "volume": 5623,
-   "medianPyeong": 4254
+   "volume": 5624,
+   "medianPyeong": 4261
   },
   {
    "month": "2026-02",
-   "volume": 6049,
+   "volume": 6046,
    "medianPyeong": 4092
   },
   {
    "month": "2026-03",
-   "volume": 5754,
-   "medianPyeong": 3936
+   "volume": 5746,
+   "medianPyeong": 3933
   },
   {
    "month": "2026-04",
-   "volume": 8912,
-   "medianPyeong": 4320
+   "volume": 8903,
+   "medianPyeong": 4322
   },
   {
    "month": "2026-05",
-   "volume": 9098,
+   "volume": 9102,
    "medianPyeong": 4593
   },
   {
