@@ -1,0 +1,99 @@
+{
+ "meta": {
+  "source": "서울 열린데이터광장 tbLnOpendataRtmsV (아파트 실거래)",
+  "period": "2025~2026 접수분",
+  "updated_note": "월간 자동 갱신"
+ },
+ "series": [
+  {
+   "month": "2025-02",
+   "volume": 6336,
+   "medianPyeong": 5105
+  },
+  {
+   "month": "2025-03",
+   "volume": 10466,
+   "medianPyeong": 5146
+  },
+  {
+   "month": "2025-04",
+   "volume": 5613,
+   "medianPyeong": 4384
+  },
+  {
+   "month": "2025-05",
+   "volume": 8469,
+   "medianPyeong": 4575
+  },
+  {
+   "month": "2025-06",
+   "volume": 12396,
+   "medianPyeong": 4825
+  },
+  {
+   "month": "2025-07",
+   "volume": 4428,
+   "medianPyeong": 4415
+  },
+  {
+   "month": "2025-08",
+   "volume": 4609,
+   "medianPyeong": 4246
+  },
+  {
+   "month": "2025-09",
+   "volume": 9011,
+   "medianPyeong": 4830
+  },
+  {
+   "month": "2025-10",
+   "volume": 9034,
+   "medianPyeong": 4739
+  },
+  {
+   "month": "2025-11",
+   "volume": 3521,
+   "medianPyeong": 4484
+  },
+  {
+   "month": "2025-12",
+   "volume": 4964,
+   "medianPyeong": 4211
+  },
+  {
+   "month": "2026-01",
+   "volume": 5620,
+   "medianPyeong": 4258
+  },
+  {
+   "month": "2026-02",
+   "volume": 6044,
+   "medianPyeong": 4091
+  },
+  {
+   "month": "2026-03",
+   "volume": 5753,
+   "medianPyeong": 3943
+  },
+  {
+   "month": "2026-04",
+   "volume": 8914,
+   "medianPyeong": 4321
+  },
+  {
+   "month": "2026-05",
+   "volume": 9104,
+   "medianPyeong": 4593
+  },
+  {
+   "month": "2026-06",
+   "volume": 4984,
+   "medianPyeong": 4283
+  },
+  {
+   "month": "2026-07",
+   "volume": 1619,
+   "medianPyeong": 4462
+  }
+ ]
+}

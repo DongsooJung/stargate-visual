@@ -1,0 +1,41 @@
+name: 실거래 월간 자동 갱신
+
+on:
+  schedule:
+    - cron: '0 20 5 * *'   # 매월 5일 20:00 UTC (KST 6일 05:00) — 전월 실거래 반영
+  workflow_dispatch:        # 수동 실행 버튼
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 서울 실거래 재집계
+        env:
+          SEOUL_KEY: ${{ secrets.SEOUL_KEY }}
+        run: python scripts/agg.py
+
+      - name: 변경 시 커밋·푸시
+        run: |
+          git config user.name  "stargate-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain assets)" ]; then
+            git add assets/*.json
+            git commit -m "chore: 서울 실거래 월간 자동 갱신 ($(date -u +%Y-%m-%d))"
+            git push
+            echo "갱신 커밋 완료"
+          else
+            echo "변경 없음"
+          fi
