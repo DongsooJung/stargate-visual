@@ -6,94 +6,94 @@
  },
  "series": [
   {
-   "month": "2025-02",
-   "volume": 6335,
-   "medianPyeong": 5097
-  },
-  {
    "month": "2025-03",
-   "volume": 10459,
-   "medianPyeong": 5157
+   "volume": 10469,
+   "medianPyeong": 5155
   },
   {
    "month": "2025-04",
-   "volume": 5622,
-   "medianPyeong": 4378
+   "volume": 5631,
+   "medianPyeong": 4388
   },
   {
    "month": "2025-05",
-   "volume": 8473,
+   "volume": 8472,
    "medianPyeong": 4574
   },
   {
    "month": "2025-06",
-   "volume": 12392,
+   "volume": 12404,
    "medianPyeong": 4825
   },
   {
    "month": "2025-07",
-   "volume": 4426,
+   "volume": 4428,
    "medianPyeong": 4409
   },
   {
    "month": "2025-08",
-   "volume": 4607,
-   "medianPyeong": 4246
+   "volume": 4602,
+   "medianPyeong": 4247
   },
   {
    "month": "2025-09",
-   "volume": 9011,
-   "medianPyeong": 4827
+   "volume": 9009,
+   "medianPyeong": 4829
   },
   {
    "month": "2025-10",
-   "volume": 9028,
-   "medianPyeong": 4741
+   "volume": 9016,
+   "medianPyeong": 4731
   },
   {
    "month": "2025-11",
-   "volume": 3520,
+   "volume": 3522,
    "medianPyeong": 4483
   },
   {
    "month": "2025-12",
-   "volume": 4963,
+   "volume": 4965,
    "medianPyeong": 4211
   },
   {
    "month": "2026-01",
-   "volume": 5624,
+   "volume": 5619,
    "medianPyeong": 4261
   },
   {
    "month": "2026-02",
-   "volume": 6046,
-   "medianPyeong": 4092
+   "volume": 6052,
+   "medianPyeong": 4091
   },
   {
    "month": "2026-03",
-   "volume": 5746,
-   "medianPyeong": 3933
+   "volume": 5735,
+   "medianPyeong": 3935
   },
   {
    "month": "2026-04",
-   "volume": 8903,
-   "medianPyeong": 4322
+   "volume": 8919,
+   "medianPyeong": 4321
   },
   {
    "month": "2026-05",
-   "volume": 9102,
+   "volume": 9153,
    "medianPyeong": 4593
   },
   {
    "month": "2026-06",
-   "volume": 4984,
-   "medianPyeong": 4283
+   "volume": 5432,
+   "medianPyeong": 4353
   },
   {
    "month": "2026-07",
-   "volume": 1619,
-   "medianPyeong": 4462
+   "volume": 4124,
+   "medianPyeong": 4402
+  },
+  {
+   "month": "2026-08",
+   "volume": 35,
+   "medianPyeong": 3351
   }
  ]
 }
