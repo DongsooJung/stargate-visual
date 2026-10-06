@@ -6,44 +6,34 @@
  },
  "series": [
   {
-   "month": "2025-03",
-   "volume": 10469,
-   "medianPyeong": 5155
-  },
-  {
-   "month": "2025-04",
-   "volume": 5631,
-   "medianPyeong": 4388
-  },
-  {
    "month": "2025-05",
-   "volume": 8472,
-   "medianPyeong": 4574
+   "volume": 8469,
+   "medianPyeong": 4572
   },
   {
    "month": "2025-06",
-   "volume": 12404,
-   "medianPyeong": 4825
+   "volume": 12395,
+   "medianPyeong": 4824
   },
   {
    "month": "2025-07",
-   "volume": 4428,
+   "volume": 4427,
    "medianPyeong": 4409
   },
   {
    "month": "2025-08",
-   "volume": 4602,
-   "medianPyeong": 4247
+   "volume": 4613,
+   "medianPyeong": 4246
   },
   {
    "month": "2025-09",
-   "volume": 9009,
+   "volume": 8999,
    "medianPyeong": 4829
   },
   {
    "month": "2025-10",
-   "volume": 9016,
-   "medianPyeong": 4731
+   "volume": 9029,
+   "medianPyeong": 4709
   },
   {
    "month": "2025-11",
@@ -57,43 +47,53 @@
   },
   {
    "month": "2026-01",
-   "volume": 5619,
-   "medianPyeong": 4261
+   "volume": 5622,
+   "medianPyeong": 4259
   },
   {
    "month": "2026-02",
-   "volume": 6052,
+   "volume": 6050,
    "medianPyeong": 4091
   },
   {
    "month": "2026-03",
-   "volume": 5735,
-   "medianPyeong": 3935
+   "volume": 5748,
+   "medianPyeong": 3934
   },
   {
    "month": "2026-04",
-   "volume": 8919,
-   "medianPyeong": 4321
+   "volume": 8948,
+   "medianPyeong": 4325
   },
   {
    "month": "2026-05",
-   "volume": 9153,
+   "volume": 9240,
    "medianPyeong": 4593
   },
   {
    "month": "2026-06",
-   "volume": 5432,
-   "medianPyeong": 4353
+   "volume": 5535,
+   "medianPyeong": 4376
   },
   {
    "month": "2026-07",
-   "volume": 4124,
-   "medianPyeong": 4402
+   "volume": 6067,
+   "medianPyeong": 4603
   },
   {
    "month": "2026-08",
-   "volume": 35,
-   "medianPyeong": 3351
+   "volume": 3687,
+   "medianPyeong": 4259
+  },
+  {
+   "month": "2026-09",
+   "volume": 2487,
+   "medianPyeong": 4234
+  },
+  {
+   "month": "2026-10",
+   "volume": 24,
+   "medianPyeong": 4036
   }
  ]
 }
